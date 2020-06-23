@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "es6",
+    "module": "commonjs",
+    "types": ["express", "node", "sequelize", "cors", "dotenv", "mocha"],
+    "esModuleInterop": true,
+    "strict": true
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*",
+    "app.ts"
+  ]
+}
