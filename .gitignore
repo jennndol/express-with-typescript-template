@@ -62,3 +62,6 @@ typings/
 
 # built files
 dist
+
+# lock files
+yarn.lock
