@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import process from 'process';
 import morgan from 'morgan';
+import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
 import errorHandler from './src/middlewares/errorHandler';
 import {stream} from './src/utils/logger';
@@ -17,6 +18,15 @@ app.use(morgan('combined', {stream}))
 app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: false }));
+app.use(helmet({
+	dnsPrefetchControl: true,
+	frameguard: true,
+	hidePoweredBy: true,
+	hsts: true,
+	ieNoOpen: true,
+	noSniff: true,
+	xssFilter: true
+}));
 
 app.get('/', (req, res) => res.status(200).json({code: 200, message: 'Hello world'}));
 
