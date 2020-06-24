@@ -11,10 +11,12 @@
   },
   "license": "Unlicense",
   "dependencies": {
+    "@types/helmet": "^0.0.47",
     "@types/morgan": "^1.9.1",
     "cors": "^2.8.4",
     "dotenv": "^8.1.0",
     "express": "^4.16.3",
+    "helmet": "^3.23.2",
     "jsonwebtoken": "^8.2.2",
     "morgan": "^1.10.0",
     "uuid": "^8.2.0",
