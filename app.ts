@@ -2,23 +2,28 @@
 
 import express from 'express';
 import cors from 'cors';
-import { json, urlencoded } from 'body-parser';
 import dotenv from 'dotenv';
 import process from 'process';
+import morgan from 'morgan';
+import { json, urlencoded } from 'body-parser';
+import errorHandler from './src/middlewares/errorHandler';
+import {stream} from './src/utils/logger';
 
 dotenv.config();
 
 const app = express();
-const Console = console;
 
+app.use(morgan('combined', {stream}))
 app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: false }));
 
 app.get('/', (req, res) => res.status(200).json({code: 200, message: 'Hello world'}));
 
+app.use(errorHandler);
+
 app.listen(process.env.PORT, () => {
-	Console.log('The system is run on port', process.env.PORT);
+	console.log('The system is run on port', process.env.PORT);
 });
 
 export default app;
