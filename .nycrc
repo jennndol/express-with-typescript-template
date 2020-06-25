@@ -1,0 +1,17 @@
+{
+  "cache": true,
+  "check-coverage": true,
+  "extension": [
+    ".ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ],
+  "sourceMap": true,
+  "reporter": [
+    "text",
+    "text-summary"
+  ],
+  "all": true,
+  "instrument": true
+}
