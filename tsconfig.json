@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "target": "es6",
     "module": "commonjs",
-    "types": ["express", "node", "sequelize", "cors", "dotenv", "mocha"],
+    "types": ["node", "express", "cors", "dotenv", "mocha"],
     "esModuleInterop": true,
     "strict": true
   },

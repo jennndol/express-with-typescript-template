@@ -3,7 +3,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import process from 'process';
+import process, { nextTick } from 'process';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
@@ -28,11 +28,11 @@ app.use(helmet({
 	xssFilter: true
 }));
 
-app.get('/', (req, res) => res.status(200).json({code: 200, message: 'Hello world'}));
+app.get('/', async(req, res, next) => res.status(200).json({code: 200, message: 'Hello world'}));
 
 app.use(errorHandler);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, (): void => {
 	console.log('The system is run on port', process.env.PORT);
 });
 
