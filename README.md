@@ -2,7 +2,7 @@
 A template for creating server using express, eslint, mocha, chai and using ES6 compatibility
 
     // to run the app
-    > yarn start
+    > yarn dev
     
     // to run the test
     > yarn test
