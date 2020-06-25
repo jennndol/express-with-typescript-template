@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "nodemon",
     "start": "PORT=3000 node ./dist/app.js",
-    "test": "PORT=3001 nyc mocha --require ts-node/register test/**/*.ts"
+    "test": "PORT=3001 nyc mocha --exit --require ts-node/register test/**/*.ts"
   },
   "license": "Unlicense",
   "dependencies": {
