@@ -15,7 +15,6 @@ describe('Testing', () => {
 			.get('/')
 			.end((e, res) => {
 				assert.equal(res.status, 200);
-				assert.equal(res.body.code, 200);
 				assert.equal(res.body.message, 'Hello world');
 			});
 	});

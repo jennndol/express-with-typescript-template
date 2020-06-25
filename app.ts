@@ -28,7 +28,7 @@ app.use(helmet({
 	xssFilter: true
 }));
 
-app.get('/', async(req, res, next) => res.status(200).json({code: 200, message: 'Hello world'}));
+app.get('/', async(req, res, next) => res.status(200).json({message: 'Hello world'}));
 
 app.use(errorHandler);
 
